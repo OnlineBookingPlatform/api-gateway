@@ -81,4 +81,9 @@ export class AccountController {
   updateAccountBySuperAdmin(@Param('id') id: string, @Body() data: any) {
     return this.accountService.updateAccountBySuperAdmin(id, data);
   }
+
+  @Put('/change-password')
+  changePassword(@Body() { id, newPassword }: { id: string, newPassword: string }) {
+    return this.accountService.changePassword(id, newPassword);
+  }
 }

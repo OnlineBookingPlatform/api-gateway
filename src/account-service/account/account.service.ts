@@ -66,4 +66,8 @@ export class AccountService {
   updateAccountBySuperAdmin(id: string, data: any) {
     return this.client.send('update_account_by_super_admin', { id, data });
   }
+
+  changePassword(id: string, newPassword: string) {
+    return this.client.send('change_password', { id, newPassword });
+  }
 }
