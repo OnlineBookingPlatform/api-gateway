@@ -22,6 +22,10 @@ import { TicketController } from './ticket/ticket.controller';
 import { TicketService } from './ticket/ticket.service';
 import { PolicyController } from './policy/policy.controller';
 import { PolicyService } from './policy/policy.service';
+import { InterestInRouteController } from './interest-in-route/interest-in-route.controller';
+import { InterestInRouteService } from './interest-in-route/interest-in-route.service';
+import { AccountServiceModule } from '../account-service/account-service.module';
+import { AccountService } from '../account-service/account/account.service';
 
 @Module({
   imports: [
@@ -31,7 +35,13 @@ import { PolicyService } from './policy/policy.service';
         transport: Transport.TCP,
         options: { host: '0.0.0.0', port: 4002 },
       },
+      {
+        name: 'ACCOUNT_SERVICE',
+        transport: Transport.TCP,
+        options: { host: '0.0.0.0', port: 4001 },
+      },
     ]),
+    AccountServiceModule,
   ],
   controllers: [
     CompanyController,
@@ -46,6 +56,7 @@ import { PolicyService } from './policy/policy.service';
     TripController,
     TicketController,
     PolicyController,
+    InterestInRouteController,
   ],
   providers: [
     CompanyService,
@@ -60,6 +71,8 @@ import { PolicyService } from './policy/policy.service';
     TripService,
     TicketService,
     PolicyService,
+    InterestInRouteService,
+    AccountService,
   ],
 })
 export class BusManagementServiceModule {}
