@@ -26,6 +26,8 @@ import { InterestInRouteController } from './interest-in-route/interest-in-route
 import { InterestInRouteService } from './interest-in-route/interest-in-route.service';
 import { AccountServiceModule } from '../account-service/account-service.module';
 import { AccountService } from '../account-service/account/account.service';
+import { TransitController } from './transit/transit.controller';
+import { TransitService } from './transit/transit.service';
 
 @Module({
   imports: [
@@ -57,6 +59,7 @@ import { AccountService } from '../account-service/account/account.service';
     TicketController,
     PolicyController,
     InterestInRouteController,
+    TransitController,
   ],
   providers: [
     CompanyService,
@@ -73,6 +76,7 @@ import { AccountService } from '../account-service/account/account.service';
     PolicyService,
     InterestInRouteService,
     AccountService,
+    TransitService,
   ],
 })
 export class BusManagementServiceModule {}
