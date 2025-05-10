@@ -1,3 +1,4 @@
+import { EvaluateController } from './evaluate/evaluate.controller';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { CompanyController } from './company/company.controller';
 import { Module } from '@nestjs/common';
@@ -28,6 +29,7 @@ import { AccountServiceModule } from '../account-service/account-service.module'
 import { AccountService } from '../account-service/account/account.service';
 import { TransitController } from './transit/transit.controller';
 import { TransitService } from './transit/transit.service';
+import { EvaluateService } from './evaluate/evaluate.service';
 
 @Module({
   imports: [
@@ -60,6 +62,7 @@ import { TransitService } from './transit/transit.service';
     PolicyController,
     InterestInRouteController,
     TransitController,
+    EvaluateController,
   ],
   providers: [
     CompanyService,
@@ -77,6 +80,7 @@ import { TransitService } from './transit/transit.service';
     InterestInRouteService,
     AccountService,
     TransitService,
+    EvaluateService,
   ],
 })
 export class BusManagementServiceModule {}
