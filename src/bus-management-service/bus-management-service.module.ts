@@ -30,6 +30,8 @@ import { AccountService } from '../account-service/account/account.service';
 import { TransitController } from './transit/transit.controller';
 import { TransitService } from './transit/transit.service';
 import { EvaluateService } from './evaluate/evaluate.service';
+import { DiscountController } from './discount/discount.controller';
+import { DiscountService } from './discount/discount.service';
 
 @Module({
   imports: [
@@ -63,6 +65,7 @@ import { EvaluateService } from './evaluate/evaluate.service';
     InterestInRouteController,
     TransitController,
     EvaluateController,
+    DiscountController,
   ],
   providers: [
     CompanyService,
@@ -81,6 +84,7 @@ import { EvaluateService } from './evaluate/evaluate.service';
     AccountService,
     TransitService,
     EvaluateService,
+    DiscountService,
   ],
 })
 export class BusManagementServiceModule {}
