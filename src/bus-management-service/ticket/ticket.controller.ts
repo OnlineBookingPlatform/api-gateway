@@ -48,4 +48,9 @@ export class TicketController {
   getTicketByAccountId(@Param('id') id: string) {
     return this.ticketService.getTicketByAccountId(id);
   }
+
+  @Put('abort-ticket-on-platform/:id')
+  abortTicketOnPlatform(@Param('id') id: number) {
+    return this.ticketService.abortTicketOnPlatform(id);
+  }
 }
