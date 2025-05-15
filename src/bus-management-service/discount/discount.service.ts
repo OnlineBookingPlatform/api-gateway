@@ -19,4 +19,7 @@ export class DiscountService {
   deleteDiscount(id: number) {
     return this.discount.send('delete_discount', id);
   }
+  getDiscountsByUserPurchase(id: any) {
+    return this.discount.send('get_discounts_by_user_purchase', id);
+  }
 }

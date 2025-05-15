@@ -21,4 +21,9 @@ export class DiscountController {
   deleteDiscount(@Param('id') id: number) {
     return this.discountService.deleteDiscount(id);
   }
+  @Get('/get-discounts-by-user-purchase/:id')
+  getDiscountsByUserPurchase(@Param('id') id: any) {
+    console.log('id', id);
+    return this.discountService.getDiscountsByUserPurchase(id);
+  }
 }
