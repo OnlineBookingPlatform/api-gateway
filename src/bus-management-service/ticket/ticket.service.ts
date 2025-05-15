@@ -36,4 +36,7 @@ export class TicketService {
     console.log('Sending request to Bus Management Service:', id);
     return this.client.send('get_ticket_by_account_id', id);
   }
+  abortTicketOnPlatform(id: number) {
+    return this.client.send('abort_ticket_on_platform', id);
+  }
 }
