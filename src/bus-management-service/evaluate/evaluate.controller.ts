@@ -10,14 +10,14 @@ export class EvaluateController {
     return this.evaluateService.createEvaluate(data);
   }
 
-  @Get('/get-evaluates-by-trip-id/:id')
+  @Get('/get-evaluates-by-company-id/:id')
   async getEvaluate(@Param('id') id: string) {
-    return this.evaluateService.getEvaluatesByTripId(id);
+    return this.evaluateService.getEvaluatesByCompanyId(id);
   }
 
-  @Get('/get-evaluates-average/:id')
+  @Get('/get-evaluates-average-by-company-id/:id')
   async getEvaluateAverage(@Param('id') id: string) {
-    console.log('Fetching evaluate average for trip ID:', id);
-    return this.evaluateService.getEvaluateAverage(id);
+    console.log('Fetching evaluate average for company ID:', id);
+    return this.evaluateService.getEvaluateAverageByCompanyId(id);
   }
 }
